@@ -9,7 +9,7 @@ function App() {
     console.log(ratings);
   };
   return (
-    <div style={{textAlign:"center"}}>
+    <div style={{ textAlign: "center" }}>
       <Stars star_count="10" starsGiven={starsGiven} />
       <Ratedstar rating={givenRating} />
     </div>
