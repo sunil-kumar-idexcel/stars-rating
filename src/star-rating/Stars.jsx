@@ -1,7 +1,5 @@
 import react, { Fragment, useState, memo } from "react";
-import bootstrap from "bootstrap";
 import "./star-styles.css";
-import Ratedstar from "./Ratedstar";
 
 const Stars = ({ star_count, starsGiven }) => {
   const [rating, setRating] = useState(-1);
@@ -16,7 +14,7 @@ const Stars = ({ star_count, starsGiven }) => {
             <button
               type="button"
               key={index}
-              className={index <= rating ? "on" : "off"}
+              className={`px-2 ${index <= rating ? "on" : "off"}`}
               onClick={() => {
                 setRating(index);
                 starsGiven(index + 1);
