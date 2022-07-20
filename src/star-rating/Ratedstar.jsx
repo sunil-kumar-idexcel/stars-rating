@@ -2,7 +2,7 @@ import { memo } from "react";
 import PropTypes from "prop-types";
 
 const Ratedstar = ({ rating }) => {
-  return <p>You have given {rating} rating(s).</p>;
+  return <p> {rating} rating(s).</p>;
 };
 
 Ratedstar.propTypes = {

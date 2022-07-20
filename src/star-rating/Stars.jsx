@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./star-styles.css";
 
 const Stars = ({ star_count, starsGiven }) => {
-  const [rating, setRating] = useState(-1);
+  const [ratings, setRating] = useState(-1);
 
   return (
     <Fragment>
@@ -12,7 +12,7 @@ const Stars = ({ star_count, starsGiven }) => {
           <button
             type="button"
             key={index}
-            className={`px-2 my-4 ${index <= rating ? "on" : "off"}`}
+            className={`px-2 my-4 ${index <= ratings ? "on" : "off"}`}
             onClick={() => {
               setRating(index);
               starsGiven(index + 1);

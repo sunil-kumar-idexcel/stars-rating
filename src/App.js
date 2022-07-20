@@ -6,7 +6,6 @@ function App() {
   const [givenRating, setGivenRating] = useState(0);
   const starsGiven = (ratings) => {
     setGivenRating(ratings);
-    console.log(ratings);
   };
   return (
     <div style={{ textAlign: "center" }}>
