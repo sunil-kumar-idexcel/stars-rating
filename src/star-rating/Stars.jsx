@@ -1,19 +1,18 @@
 import { Fragment, useState, memo } from "react";
+import PropTypes from "prop-types";
 import "./star-styles.css";
 
 const Stars = ({ star_count, starsGiven }) => {
   const [rating, setRating] = useState(-1);
-  const starArray = [];
-  starArray.length = star_count;
-  starArray.fill("*");
+
   return (
     <Fragment>
-      {starArray.map((item, index) => {
+      {[...Array(star_count)].map((item, index) => {
         return (
           <button
             type="button"
             key={index}
-            className={`px-2 ${index <= rating ? "on" : "off"}`}
+            className={`px-2 my-4 ${index <= rating ? "on" : "off"}`}
             onClick={() => {
               setRating(index);
               starsGiven(index + 1);
@@ -34,5 +33,10 @@ const Stars = ({ star_count, starsGiven }) => {
       })}
     </Fragment>
   );
+};
+
+Stars.propTypes = {
+  star_count: PropTypes.number,
+  starsGiven: PropTypes.func,
 };
 export default memo(Stars);

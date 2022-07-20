@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import Ratedstar from "./star-rating/Ratedstar";
 import Stars from "./star-rating/Stars";
 
@@ -10,10 +10,10 @@ function App() {
   };
   return (
     <div style={{ textAlign: "center" }}>
-      <Stars star_count="10" starsGiven={starsGiven} />
+      <Stars star_count={5} starsGiven={starsGiven} />
       <Ratedstar rating={givenRating} />
     </div>
   );
 }
 
-export default App;
+export default memo(App);
