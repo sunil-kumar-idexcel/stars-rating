@@ -1,6 +1,6 @@
 import { useState, memo } from "react";
 import Ratedstar from "./star-rating/Ratedstar";
-import Stars from "./star-rating/Stars";
+import StarsRatings from "./star-rating/StarsRatings";
 
 function App() {
   const [givenRating, setGivenRating] = useState(0);
@@ -9,7 +9,7 @@ function App() {
   };
   return (
     <div style={{ textAlign: "center" }}>
-      <Stars star_count={15} starsGiven={starsGiven} />
+      <StarsRatings star_count={15} starsGiven={starsGiven} />
       <Ratedstar rating={givenRating} />
     </div>
   );

@@ -1,7 +1,7 @@
 import { Fragment, useState, memo } from "react";
 import PropTypes from "prop-types";
 
-const Stars = ({ star_count, starsGiven }) => {
+const StarsRatings = ({ star_count, starsGiven }) => {
   const [ratings, setRating] = useState(-1);
 
   return (
@@ -36,8 +36,8 @@ const Stars = ({ star_count, starsGiven }) => {
   );
 };
 
-Stars.propTypes = {
+StarsRatings.propTypes = {
   star_count: PropTypes.number,
   starsGiven: PropTypes.func,
 };
-export default memo(Stars);
+export default memo(StarsRatings);
