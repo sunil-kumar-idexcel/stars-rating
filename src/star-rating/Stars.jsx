@@ -1,6 +1,5 @@
 import { Fragment, useState, memo } from "react";
 import PropTypes from "prop-types";
-import "./star-styles.css";
 
 const Stars = ({ star_count, starsGiven }) => {
   const [ratings, setRating] = useState(-1);
@@ -10,9 +9,11 @@ const Stars = ({ star_count, starsGiven }) => {
       {[...Array(star_count)].map((item, index) => {
         return (
           <span
-            type="button"
             key={index}
-            className={`px-2 my-4 cursor-pointer ${index <= ratings ? "text-warning" : "text-secondary opacity-25"}`}
+            className={`px-2 my-4 d-inline-block ${
+              index <= ratings ? "text-warning" : "text-secondary opacity-25"
+            }`}
+            style={{ cursor: "pointer" }}
             onClick={() => {
               setRating(index);
               starsGiven(index + 1);
